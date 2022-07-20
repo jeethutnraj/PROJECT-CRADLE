@@ -98,7 +98,7 @@ if (msg == 1) { // sending msg when movement detected
   String SMS = "baby is awake";
   sim800.println(SMS);
   delay(100);
-  sim800.println((char)26);// ASCII code of CTRL+Z
+  sim800.println((char)26);
   delay(200);
 
       msg=0;
