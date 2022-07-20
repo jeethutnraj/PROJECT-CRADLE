@@ -1,6 +1,8 @@
 // project cradle helps the working parents to get status about the baby on the room while they are working
 // calls and messages are recieved on the mobile phones
 
+// Remove the Serial.println on final upload
+
 #include <SoftwareSerial.h>
 #define rxPin 10  //GSM Module TX pin to Arduino 10
 #define txPin 11  //GSM Module RX pin to Arduino 11
@@ -17,10 +19,10 @@ int msg;
 SoftwareSerial sim800(rxPin,txPin);
 
 void setup() {
-    sim800.begin(9600);// gsm enabling
+  sim800.begin(9600);// gsm enabling
   Serial.println("SIM800L software serial initialize");
   sim800.println("AT");
-  Serial.begin(9600);
+  Serial.begin(9600); // serial monitor
   pinMode (2, INPUT);  // radar sensor
   pinMode (A0, INPUT); // microphone
   Serial.println("Waiting for motion");
