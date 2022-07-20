@@ -2,8 +2,8 @@
 // calls and messages are recieved on the mobile phones
 
 #include <SoftwareSerial.h>
-#define rxPin 10  //GSM Module TX pin to Arduino 2
-#define txPin 11  //GSM Module RX pin to Arduino 3
+#define rxPin 10  //GSM Module TX pin to Arduino 10
+#define txPin 11  //GSM Module RX pin to Arduino 11
 const String PHONE = "+91xxxxxxxxxx"; // your phone number
 int avg1;
 int sum1;
@@ -98,7 +98,7 @@ if (msg == 1) { // sending msg when movement detected
   String SMS = "baby is awake";
   sim800.println(SMS);
   delay(100);
-  sim800.println((char)26);// ASCII code of CTRL+Z
+  sim800.println((char)26);
   delay(200);
 
       msg=0;
